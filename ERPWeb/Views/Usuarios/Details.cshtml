@@ -53,6 +53,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "Usuarios")'"><i class="glyphicon glyphicon-backward"></i></button>
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Edit", "Usuarios", new { Model.ID })'"><i class="glyphicon glyphicon-edit"></i></button>
+    <button type="button" class="btn btn-default" onclick="location.href='@Url.Action("Index", "Usuarios")'"><i class="glyphicon glyphicon-backward"></i></button>
 </p>
