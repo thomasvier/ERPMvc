@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ERPWeb.Models.Administracao.Perfil>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Create", "Perfis")'"><i class="glyphicon glyphicon-plus"></i></button>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ativo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ativo)
+        </td>
+        <td>
+            <button type="button" class="btn btn-primary edit" onclick="location.href='@Url.Action("Edit", "Perfis", new { item.ID })'"><i class="glyphicon glyphicon-edit"></i></button>
+            <button type="button" class="btn btn-default details" onclick="location.href='@Url.Action("Details", "Perfis", new { item.ID })'"><i class="glyphicon glyphicon-file"></i></button>            
+            <button type="button" class="btn btn-danger delete" onclick="location.href='@Url.Action("Delete", "Perfis", new { item.ID })'"><i class="glyphicon glyphicon-trash"></i></button>
+        </td>
+    </tr>
+}
+
+</table>
